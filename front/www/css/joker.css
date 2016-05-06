@@ -2,13 +2,6 @@
     font-family: "Chalk";
     src: url('../font/Colored Crayons.ttf');
 }
-#test {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 30vw;
-	transition-duration: 2s;
-}
 body{
 	text-align: center;
 }
@@ -113,9 +106,10 @@ QUIZ
     font-size: 288%;
     text-align: center;
     top: 40vh;
+    box-shadow: none!important;
 }
-.btn-culture {
-	box-shadow: none!important;
+#btn-quiz {
+	display: none;
 }
 .history {
 	position: absolute;

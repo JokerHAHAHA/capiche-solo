@@ -7,16 +7,16 @@
 			<img class="slate" src="img/slate.png" alt="slate background">
 			<span class=quiz-title>QUIZ</span>
             <!-- button new game -->
-            <button ng-show="step == 1" ng-click="step=2" class="button button-clear">Nouvelle Partie</button>
+            <button ng-show="step == 1" id="clickme" ng-click="step=2" class="button button-clear">Nouvelle Partie</button>
 
             <!-- choose type of game	 -->
-            <button ng-show="step == 2" ng-click="step=3" class="button button-clear btn-culture">Culture Generale</button><br><br>
-            <button ng-show="step == 2" ng-click="step=4" class="button button-clear">Culture Code</button>
+            <button ng-show="step == 2" id="btn-quiz" ng-click="step=3" class="button button-clear btn-transparent">Culture Generale</button><br><br>
+            <button ng-show="step == 2" id="btn-quiz" ng-click="step=4" class="button button-clear">Culture Code</button>
         </div>
 
 
-		<!-- historique des game -->
-    	<div class="history" ng-show="step < 3">
+		<!-- games history -->
+    	<div class="history" ng-hide="step > 1">
     		<h2>Historique</h2>
 			<ion-item class="item-thumbnail-left" ng-repeat="career in careers">
 				<img ng-src=/img/quiz-{{career.game.category}}.png alt="quiz {{career.game.category}} logo">

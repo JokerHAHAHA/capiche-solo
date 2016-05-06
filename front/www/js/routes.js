@@ -81,6 +81,6 @@ angular.module('app.routes', [])
         }
     })
 
-    $urlRouterProvider.otherwise('/home')
+    $urlRouterProvider.otherwise('/homeGame')
 
 });

@@ -3,6 +3,19 @@ function quizCtrl($scope, $http, $cordovaGeolocation) {
 	$scope.career = {};
 	$scope.answer = [];
 
+		// With the element initially hidden, we can show it slowly:
+		$( "#clickme" ).click(function() {
+		  $( "#btn-quiz:hidden").fadeIn( "slow");
+}
+		// document.querySelector('#btn-quiz').style.opacity = 0;
+		// setTimeout(function(){
+
+		// 		document.querySelector('#btn-quiz').style.opacity = 1;
+
+		// 	}, 1000); 
+	
+
+
 	var posOptions = {timeout: 10000, enableHighAccuracy: true};
 	$cordovaGeolocation
 	.getCurrentPosition(posOptions)
