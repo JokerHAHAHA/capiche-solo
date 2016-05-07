@@ -7,7 +7,7 @@
         <div ng-show="step < 3" class="button-new-game">
 			<span class=quiz-title>QUIZ</span>
             <!-- button new game -->
-            <button ng-show="step == 1" id="clickme" ng-click="step=2" class="button button-clear">Nouvelle Partie</button>
+            <button ng-show="step == 1" id="btn-new" ng-click="step=2" class="button button-clear">Nouvelle Partie</button>
 
             <!-- choose type of game	 -->
             <button ng-show="step == 2" id="btn-culture" ng-click="step=3" class="button button-clear btn-transparent">Culture Generale</button><br><br>
@@ -53,18 +53,18 @@
             <hr> -->
 
             <div class="container-logo">
-                <img ng-href="./ruby" ng-click="step=5; question=1" 
+                <img ng-href="./ruby" id="btn-ruby" ng-click="step=5; question=1" 
                     class="btn-ruby button button-clear btn-transparent" src="/img/ruby.png" alt="logo ruby">
                 
-                <img ng-click="step=6" 
+                <img id="btn-php" ng-click="step=6" 
                     class="btn-php button button-clear btn-transparent" src="/img/php.png" alt="logo php">
                 
-                <img ng-click="step=7" 
+                <img id="btn-javascript" ng-click="step=7" 
                     class="btn-javascript button button-clear btn-transparent" src="/img/javascript.png" alt="logo javascript">
             </div>
             
-            <button class="btn-warrior button button-clear btn-transparent">Je suis un warrior !</button>
-            <button class="btn-indecis button button-clear btn-transparent">Je suis indecis</button>
+            <button id="btn-warrior" class="btn-warrior button button-clear btn-transparent">Je suis un warrior !</button>
+            <button id="btn-indecis" class="btn-indecis button button-clear btn-transparent">Je suis indecis</button>
 
 
         </div>

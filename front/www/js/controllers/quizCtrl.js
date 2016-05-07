@@ -1,15 +1,10 @@
 function quizCtrl($scope, $http, $cordovaGeolocation) {
 	$scope.step = 1;
 	$scope.career = {};
-	$scope.answer = [];
+	$scope.answer = [];	
 
-		// With the element initially hidden, we can show it slowly:
-		$( "#clickme" ).click(function() {
-		  $("#btn-culture:hidden").fadeIn(1500);
-		  $("#btn-code:hidden").fadeIn(1500);
-		});
-	
 
+	$.getScript("/js/jquery/jquery.js");
 
 	var posOptions = {timeout: 10000, enableHighAccuracy: true};
 	$cordovaGeolocation
