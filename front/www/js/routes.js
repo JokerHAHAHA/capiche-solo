@@ -82,6 +82,7 @@ angular.module('app.routes', [])
             }
         }
     })
+
     .state('menu.signup', {
         url: 'signup',
         views: {
