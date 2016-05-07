@@ -10,13 +10,14 @@ angular.module('app.routes', [])
     $stateProvider
 
 
-
+    // HOME
     .state('home', {
         url: '/home',
         templateUrl: 'templates/home.html',
         controller: 'homeCtrl'
     })
 
+    // GAME CHOICES
     .state('menu.homeGame', {
         url: 'homeGame',
         views: {
@@ -27,6 +28,7 @@ angular.module('app.routes', [])
         }
     })
 
+    // QUIZ
     .state('menu.quiz', {
         url: 'quiz',
         views: {
@@ -57,6 +59,17 @@ angular.module('app.routes', [])
         }
     })
 
+    // HANG
+    .state('menu.hang', {
+        url: 'hang',
+        views: {
+            'side-menu21': {
+                templateUrl: 'templates/games/hang/hang.html',
+                controller: 'hangCtrl'
+            }
+        }
+    })
+
     .state('menu.compte', {
         url: 'compte',
         views: {
@@ -67,12 +80,6 @@ angular.module('app.routes', [])
         }
     })
 
-    .state('menu', {
-        url: '/',
-        templateUrl: 'templates/menu.html',
-        abstract: true
-    })
-
     .state('menu.chat', {
         url: 'chat',
         views: {
@@ -81,6 +88,12 @@ angular.module('app.routes', [])
                 controller: 'chatCtrl'
             }
         }
+    })
+
+    .state('menu', {
+        url: '/',
+        templateUrl: 'templates/menu.html',
+        abstract: true
     })
 
     .state('menu.signup', {

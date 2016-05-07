@@ -1,4 +1,3 @@
-
 function homeGameCtrl($scope, $http, $cordovaGeolocation) {
 
 

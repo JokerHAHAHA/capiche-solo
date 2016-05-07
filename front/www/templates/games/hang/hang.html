@@ -1,0 +1,78 @@
+<body>
+	<div ng-show="number == 0" class="inputWord">
+
+		<label>C'est quoi le mot qu'tu veux lui faire d'viner ?</label>
+		<hr>
+		<input uppercaseOnly ng-model="word" class=form-control>
+		<hr>
+		<span ng-click="add(word.toUpperCase()); number = 1; whiteSpace()" class="btn btn-success">C'est parti !</span>
+	</div>
+	
+
+
+
+	<div ng-show="number == 1" class="container-fuid game">
+
+		 <div class="picture">
+			<img ng-show="numberPhp == 0" src="assets/php0.png" alt="" class="php0">
+			<img ng-show="numberPhp == 1" src="assets/php1.png" alt="" class="php1">
+			<img ng-show="numberPhp == 2" src="assets/php2.png" alt="" class="php2">
+			<img ng-show="numberPhp == 3" src="assets/php3.png" alt="" class="php3">
+			<img ng-show="numberPhp == 4" src="assets/php4.png" alt="" class="php4">
+			<img ng-show="numberPhp == 5" src="assets/php5.png" alt="" class="php5">
+			<img ng-show="numberPhp == 6" src="assets/php6.png" alt="" class="php6">
+			<img ng-show="numberPhp == 7" src="assets/php7.png" alt="" class="php7">
+			<img ng-show="numberPhp == 8" src="assets/php8.png" alt="" class="php8">
+		</div>
+	
+	<div class="good">
+		<span ng-repeat="n in good track by $index">
+			<span>{{n}}</span>
+		</span>
+	</div>
+
+	<div ng-show="numberInit == 1" class="lost">
+		<h1>PERDU !</h1>
+	</div>
+	<div ng-show="numberInit == 2" class="lost">
+		<h1>GAGNE !</h1>
+	</div>
+
+	<div ng-hide="numberInit == 1 || numberInit == 2" class="buttons">
+		<!-- <h2>Les lettres possibles</h2> -->
+		<span ng-hide="letter[1]=='A'" ng-click="check('A'); letter[1]='A'" class="btn btn-success">A</span>
+		<span ng-hide="letter[2]=='B'" ng-click="check('B'); letter[2]='B'" class="btn btn-success">B</span>
+		<span ng-hide="letter[3]=='C'" ng-click="check('C'); letter[3]='C'" class="btn btn-success">C</span>
+		<span ng-hide="letter[4]=='D'" ng-click="check('D'); letter[4]='D'" class="btn btn-success">D</span>
+		<span ng-hide="letter[5]=='E'" ng-click="check('E'); letter[5]='E'" class="btn btn-success">E</span>
+		<span ng-hide="letter[6]=='F'" ng-click="check('F'); letter[6]='F'" class="btn btn-success">F</span>
+		<span ng-hide="letter[7]=='G'" ng-click="check('G'); letter[7]='G'" class="btn btn-success">G</span>
+		<span ng-hide="letter[8]=='H'" ng-click="check('H'); letter[8]='H'" class="btn btn-success">H</span>
+		<span ng-hide="letter[9]=='I'" ng-click="check('I'); letter[9]='I'" class="btn btn-success">I</span>
+		<span ng-hide="letter[10]=='J'" ng-click="check('J'); letter[10]='J'" class="btn btn-success">J</span>
+		<span ng-hide="letter[11]=='K'" ng-click="check('K'); letter[11]='K'" class="btn btn-success">K</span>
+		<span ng-hide="letter[12]=='L'" ng-click="check('L'); letter[12]='L'" class="btn btn-success">L</span>
+		<span ng-hide="letter[13]=='M'" ng-click="check('M'); letter[13]='M'" class="btn btn-success">M</span>
+		<span ng-hide="letter[14]=='N'" ng-click="check('N'); letter[14]='N'" class="btn btn-success">N</span>
+		<span ng-hide="letter[15]=='O'" ng-click="check('O'); letter[15]='O'" class="btn btn-success">O</span>
+		<span ng-hide="letter[16]=='P'" ng-click="check('P'); letter[16]='P'" class="btn btn-success">P</span>
+		<span ng-hide="letter[17]=='Q'" ng-click="check('Q'); letter[17]='Q'" class="btn btn-success">Q</span>
+		<span ng-hide="letter[18]=='R'" ng-click="check('R'); letter[18]='R'" class="btn btn-success">R</span>
+		<span ng-hide="letter[19]=='S'" ng-click="check('S'); letter[19]='S'" class="btn btn-success">S</span>
+		<span ng-hide="letter[20]=='T'" ng-click="check('T'); letter[20]='T'" class="btn btn-success">T</span>
+		<span ng-hide="letter[21]=='U'" ng-click="check('U'); letter[21]='U'" class="btn btn-success">U</span>
+		<span ng-hide="letter[22]=='V'" ng-click="check('V'); letter[22]='V'" class="btn btn-success">V</span>
+		<span ng-hide="letter[23]=='W'" ng-click="check('W'); letter[23]='W'" class="btn btn-success">W</span>
+		<span ng-hide="letter[24]=='X'" ng-click="check('X'); letter[24]='X'" class="btn btn-success">X</span>
+		<span ng-hide="letter[25]=='Y'" ng-click="check('Y'); letter[25]='Y'" class="btn btn-success">Y</span>
+		<span ng-hide="letter[26]=='Z'" ng-click="check('Z'); letter[26]='Z'" class="btn btn-success">Z</span>
+	</div>
+
+	<div class="errors">
+		<span ng-repeat="n in bad track by $index" class="bad">
+			<span class="btn btn-danger btn-block" style="margin-bottom : 10%;">{{n}}</span>
+		</span>
+	</div>
+</div>
+
+</body>
