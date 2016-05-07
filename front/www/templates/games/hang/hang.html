@@ -1,29 +1,31 @@
-<body>
-	<div ng-show="number == 0" class="inputWord">
+<ion-view id="hang" class="hang" hide-nav-bar="true" title="Hang Php">
 
-		<label>C'est quoi le mot qu'tu veux lui faire d'viner ?</label>
-		<hr>
-		<input uppercaseOnly ng-model="word" class=form-control>
-		<hr>
-		<span ng-click="add(word.toUpperCase()); number = 1; whiteSpace()" class="btn btn-success">C'est parti !</span>
+<ion-content padding="false">
+
+<div ng-show="number == 0" class="input-word">
+
+	<label>C'est quoi le mot qu'tu veux lui faire d'viner ?</label>
+	<hr>
+	<input ng-model="hang.word" class="form-control">
+	<hr>
+	<span ng-click="add(); number = 1; whiteSpace()" class="btn btn-success">C'est parti !</span>
+</div>
+
+
+
+
+<div ng-show="number == 1" class="container-fuid game">
+
+	<div class="picture">
+		<img ng-show="numberPhp == 0" ng-src="img/php0.png" alt="" class="php0">
+		<img ng-show="numberPhp == 2" src="img/php2.png" alt="" class="php2">
+		<img ng-show="numberPhp == 3" src="img/php3.png" alt="" class="php3">
+		<img ng-show="numberPhp == 4" src="img/php4.png" alt="" class="php4">
+		<img ng-show="numberPhp == 5" src="img/php5.png" alt="" class="php5">
+		<img ng-show="numberPhp == 6" src="img/php6.png" alt="" class="php6">
+		<img ng-show="numberPhp == 7" src="img/php7.png" alt="" class="php7">
+		<img ng-show="numberPhp == 8" src="img/php8.png" alt="" class="php8">
 	</div>
-	
-
-
-
-	<div ng-show="number == 1" class="container-fuid game">
-
-		 <div class="picture">
-			<img ng-show="numberPhp == 0" src="assets/php0.png" alt="" class="php0">
-			<img ng-show="numberPhp == 1" src="assets/php1.png" alt="" class="php1">
-			<img ng-show="numberPhp == 2" src="assets/php2.png" alt="" class="php2">
-			<img ng-show="numberPhp == 3" src="assets/php3.png" alt="" class="php3">
-			<img ng-show="numberPhp == 4" src="assets/php4.png" alt="" class="php4">
-			<img ng-show="numberPhp == 5" src="assets/php5.png" alt="" class="php5">
-			<img ng-show="numberPhp == 6" src="assets/php6.png" alt="" class="php6">
-			<img ng-show="numberPhp == 7" src="assets/php7.png" alt="" class="php7">
-			<img ng-show="numberPhp == 8" src="assets/php8.png" alt="" class="php8">
-		</div>
 	
 	<div class="good">
 		<span ng-repeat="n in good track by $index">
@@ -75,4 +77,5 @@
 	</div>
 </div>
 
-</body>
+</ion-content>
+</ion-view>

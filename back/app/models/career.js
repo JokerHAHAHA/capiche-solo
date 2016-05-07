@@ -1,4 +1,4 @@
-// MODEL TODO
+// MODEL CAREER
 var mongoose = require('mongoose');
 var careerSchema = new mongoose.Schema({
 	game : {}

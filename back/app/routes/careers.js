@@ -1,4 +1,4 @@
-// ROUTES TODOS
+// ROUTES CAREERS
 var Career = require('../models/career.js');
 module.exports 	= function(app) {
 	app.get('/careers', Career.findAll);
