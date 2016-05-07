@@ -14,19 +14,16 @@
             <button ng-show="step == 2" id="btn-code" ng-click="step=4" class="button button-clear btn-transparent">Culture Code</button>
         </div>
 
-
-		{{echo "/templates/games/quiz/history.html")}}
-
-<!-- <div class="history" ng-hide="step > 1">
-    <h2>Historique</h2>
-    <ion-item class="item-thumbnail-left" ng-repeat="career in careers">
-        <img ng-src=/img/quiz-{{career.game.category}}.png alt="quiz {{career.game.category}} logo">
-        <span class="career-name">{{career.game.name}}</span>
-        <span class="career-result">{{career.game.result}}</span>
-        <hr>
-        <h3>Adversaire : {{users[$index+2].name}}</h3>
-    </ion-item>
-</div> -->
+        <div class="history" ng-hide="step > 1">
+            <h2>Historique</h2>
+            <ion-item class="item-thumbnail-left" ng-repeat="career in careers">
+                <img ng-src=/img/quiz-{{career.game.category}}.png alt="quiz {{career.game.category}} logo">
+                <span class="career-name">{{career.game.name}}</span>
+                <span class="career-result">{{career.game.result}}</span>
+                <hr>
+                <h3>Adversaire : {{users[$index+2].name}}</h3>
+            </ion-item>
+        </div>
 
         <!-- choose culture theme -->
         <div ng-show="step == 3">
