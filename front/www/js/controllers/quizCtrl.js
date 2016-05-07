@@ -5,14 +5,9 @@ function quizCtrl($scope, $http, $cordovaGeolocation) {
 
 		// With the element initially hidden, we can show it slowly:
 		$( "#clickme" ).click(function() {
-		  $( "#btn-quiz:hidden").fadeIn( "slow");
-}
-		// document.querySelector('#btn-quiz').style.opacity = 0;
-		// setTimeout(function(){
-
-		// 		document.querySelector('#btn-quiz').style.opacity = 1;
-
-		// 	}, 1000); 
+		  $("#btn-culture:hidden").fadeIn(1500);
+		  $("#btn-code:hidden").fadeIn(1500);
+		});
 	
 
 
@@ -37,7 +32,6 @@ function quizCtrl($scope, $http, $cordovaGeolocation) {
 		});
 		$http.get('./datas/users.json').success(function (data) {
 			$scope.users = data;
-			console.log($scope.users);
 		});
 	}
 

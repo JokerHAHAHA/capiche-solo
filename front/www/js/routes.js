@@ -36,6 +36,17 @@ angular.module('app.routes', [])
             }
         }
     })
+
+    .state('menu.ruby', {
+        url: 'quiz/ruby',
+        views: {
+            'side-menu21': {
+                templateUrl: 'templates/games/quiz/ruby.html',
+                controller: 'quizCtrl'
+            }
+        }
+    })
+
     .state('menu.gage', {
         url: 'gage',
         views: {

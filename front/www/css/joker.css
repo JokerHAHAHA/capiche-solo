@@ -1,6 +1,6 @@
 @font-face {
-    font-family: "Chalk";
-    src: url('../font/Colored Crayons.ttf');
+	font-family: "Chalk";
+	src: url('../font/Colored Crayons.ttf');
 }
 body{
 	text-align: center;
@@ -44,11 +44,11 @@ body{
 	font-family: 'Marck Script', cursive;
 	font-weight: bold;
 	font-size: 150%;
-    position: absolute;
-    width: 33vw;
-    top: 35vh;
-    left: 33.3vw;
-    box-shadow: 0px 0px 3px black;
+	position: absolute;
+	width: 33vw;
+	top: 35vh;
+	left: 33.3vw;
+	box-shadow: 0px 0px 3px black;
 }
 .game-choice .btn-pendu {
 	background-image: url('../img/btn-papyrus.jpg');
@@ -56,11 +56,11 @@ body{
 	font-family: 'Marck Script', cursive;
 	font-weight: bold;
 	font-size: 150%;
-    position: absolute;
-    width: 33vw;
-    top: 55vh;
-    left: 33.3vw;
-    box-shadow: 0px 0px 3px black;
+	position: absolute;
+	width: 33vw;
+	top: 55vh;
+	left: 33.3vw;
+	box-shadow: 0px 0px 3px black;
 }
 
 
@@ -70,21 +70,21 @@ QUIZ
 .quiz {
 	font-family: 'Marck Script', cursive;
 	text-align: center;
-    text-shadow: 0px 0px 1px black;
+	text-shadow: 0px 0px 1px black;
 }
 .quiz-title {
-    position: absolute;
-    font-family: 'Chalk', cursive;
-    color: #FFFFFF;
-    font-size: 390%;
-    top: 17vh;
-    left: 10vw;
+	position: absolute;
+	font-family: 'Chalk', cursive;
+	color: #FFFFFF;
+	font-size: 390%;
+	top: 17vh;
+	left: 10vw;
 }
 .button-new-game button {
 	text-align: center;
-    text-shadow: 0px 0px 3px black;
-    box-shadow: 1px 1px 3px black;
-    border-radius: 4px;
+	text-shadow: 0px 0px 3px black;
+	box-shadow: 1px 1px 3px black;
+	border-radius: 4px;
 }
 .slate {
 	position: absolute;
@@ -101,14 +101,14 @@ QUIZ
 	height: 100vh;
 }
 .quiz button {
-    font-family: 'Chalk', cursive;
-    color: #FFFFFF;
-    font-size: 288%;
-    text-align: center;
-    top: 40vh;
-    box-shadow: none!important;
+	font-family: 'Chalk', cursive;
+	color: #FFFFFF;
+	font-size: 288%;
+	text-align: center;
+	top: 40vh;
+	box-shadow: none!important;
 }
-#btn-quiz {
+#btn-new, #btn-culture, #btn-code {
 	display: none;
 }
 .history {
@@ -124,10 +124,35 @@ QUIZ
 .history h1, .history h3 {
 	display: inline-block;
 }
-.button-languages>button>img {
-	width: 30%;
-	margin: auto;
-	margin-top: 15px;
+.button-languages {
+	width: 100vw;
+	height: 100vh;
+}
+.container-logo {
+	position: absolute;
+	top: 14vh;
+	width: 100%;
+	height: 30%;
+}
+.btn-ruby,
+.btn-php,
+.btn-javascript {
+	max-height: none!important;
+	width: 20%;
+	height: 92px;
+	margin: 15px!important;
+}
+.btn-warrior {
+    position: absolute!important;
+    top: 55vh!important;
+    left: 12vw;
+    width: 30vw;
+}
+.btn-indecis {
+    position: absolute!important;
+    top: 55vh!important;
+    left: 47vw;
+    width: 30vw;
 }
 .container-question {
 	text-align: center;
@@ -167,12 +192,12 @@ QUIZ
 	position: absolute;
 	bottom: 10%;
 	left: 0;
-}*/
-.btn-new-in-gage {
-	position: absolute;
-	bottom: 25%;
-	left: 0;
-}
-.gage-container {
-	margin-top: 20%;
-}
+	}*/
+	.btn-new-in-gage {
+		position: absolute;
+		bottom: 25%;
+		left: 0;
+	}
+	.gage-container {
+		margin-top: 20%;
+	}

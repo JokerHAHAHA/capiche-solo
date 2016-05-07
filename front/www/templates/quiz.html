@@ -2,30 +2,30 @@
 
     <ion-content padding="false">
 
+		<img class="papyrus" src="img/quiz-papyrus.jpg" alt="slate background">
+		<img class="slate" src="img/slate.png" alt="slate background">
         <div ng-show="step < 3" class="button-new-game">
-			<img class="papyrus" src="img/quiz-papyrus.jpg" alt="slate background">
-			<img class="slate" src="img/slate.png" alt="slate background">
 			<span class=quiz-title>QUIZ</span>
             <!-- button new game -->
             <button ng-show="step == 1" id="clickme" ng-click="step=2" class="button button-clear">Nouvelle Partie</button>
 
             <!-- choose type of game	 -->
-            <button ng-show="step == 2" id="btn-quiz" ng-click="step=3" class="button button-clear btn-transparent">Culture Generale</button><br><br>
-            <button ng-show="step == 2" id="btn-quiz" ng-click="step=4" class="button button-clear">Culture Code</button>
+            <button ng-show="step == 2" id="btn-culture" ng-click="step=3" class="button button-clear btn-transparent">Culture Generale</button><br><br>
+            <button ng-show="step == 2" id="btn-code" ng-click="step=4" class="button button-clear btn-transparent">Culture Code</button>
         </div>
 
 
 		<!-- games history -->
     	<div class="history" ng-hide="step > 1">
-    		<h2>Historique</h2>
-			<ion-item class="item-thumbnail-left" ng-repeat="career in careers">
-				<img ng-src=/img/quiz-{{career.game.category}}.png alt="quiz {{career.game.category}} logo">
-				<span class="career-name">{{career.game.name}}</span>
-				<span class="career-result">{{career.game.result}}</span>
-				<hr>
-				<h3>Adversaire : {{users[$index+2].name}}</h3>
-			</ion-item>
-    	</div>
+            <h2>Historique</h2>
+            <ion-item class="item-thumbnail-left" ng-repeat="career in careers">
+                <img ng-src=/img/quiz-{{career.game.category}}.png alt="quiz {{career.game.category}} logo">
+                <span class="career-name">{{career.game.name}}</span>
+                <span class="career-result">{{career.game.result}}</span>
+                <hr>
+                <h3>Adversaire : {{users[$index+2].name}}</h3>
+            </ion-item>
+        </div>
 
 
         <!-- choose culture theme -->
@@ -45,6 +45,28 @@
             <button class="button button-block button-positive">Cinéma</button>
             <button class="button button-block button-positive">Musique</button>
             <button class="button button-block button-positive">Sport</button>
+        </div>
+
+        <!-- choose code language -->
+        <div class="button-languages" ng-show="step == 4">
+            <!-- <h3 class="titleCode">Culture Code</h3>
+            <hr> -->
+
+            <div class="container-logo">
+                <img ng-href="./ruby" ng-click="step=5; question=1" 
+                    class="btn-ruby button button-clear btn-transparent" src="/img/ruby.png" alt="logo ruby">
+                
+                <img ng-click="step=6" 
+                    class="btn-php button button-clear btn-transparent" src="/img/php.png" alt="logo php">
+                
+                <img ng-click="step=7" 
+                    class="btn-javascript button button-clear btn-transparent" src="/img/javascript.png" alt="logo javascript">
+            </div>
+            
+            <button class="btn-warrior button button-clear btn-transparent">Je suis un warrior !</button>
+            <button class="btn-indecis button button-clear btn-transparent">Je suis indecis</button>
+
+
         </div>
 
         <!-- Questions histoires -->
@@ -88,102 +110,7 @@
 
 
 
-        <!-- choose code language -->
-        <div class="button-languages" ng-show="step == 4">
-            <h3 class="titleCode">Culture Code</h3>
-            <hr>
-            <button ng-click="step=5; question=1" class="button button-block button-light">
-                <img src="/img/ruby.png" alt="logo ruby">
-            </button>
 
-            <button ng-click="step=6" class="button button-block button-light">
-                <img src="/img/php.png" alt="logo php">
-            </button>
-
-            <button ng-click="step=7" class="button button-block button-light">
-                <img src="/img/javascript.png" alt="logo javascript">
-            </button>
-
-            <button class="noLogo button button-block button-light">Je suis un warrior !</button>
-
-            <button class="noLogo button button-block button-light">Je suis indécis</button>
-        </div>
-
-
-       <!-- question ruby -->
-		<div class="questions" ng-show="step == 5">
-			<ion-item class="item-text-wrap container-question; " ng-repeat="question in quiz.ruby | filter: {questionNumber : question}">
-				<h2>{{question.question}}</h2>
-				<button ng-click="checkRep(question.choice1, question.questionNumber)" class="button button-royal button-block">{{question.choice1}}</button>
-				<button ng-click="checkRep(question.choice2, question.questionNumber)" class="button button-royal button-block">{{question.choice2}}</button>
-				<button ng-click="checkRep(question.choice3, question.questionNumber)" class="button button-royal button-block">{{question.choice3}}</button>
-				<button ng-click="checkRep(question.choice4, question.questionNumber)" class="button button-royal button-block">{{question.choice4}}</button>
-			</ion-item>
-			<button ng-click="question == 7 ? step=51 : question = question+1" class="button button-block button-positive button-next-question">Question suivante</button>
-		</div>
-		
-		<!-- recap pour un joueur -->
-		<div ng-show="step == 51">
-		<h1>Tes résultats</h1>
-			<ion-item class="item-text-wrap container-question" ng-repeat="question in quiz.ruby">
-				<h2>{{question.question}}</h2>
-				<p ng-show="answer[$index] == 'good'" class="bravo">{{(answer[$index]) == "good" ? "BRAVO !" : ""}}</p>
-				<p ng-show="answer[$index] != 'good'"class="dommage">{{(answer[$index]) != "good" ? "DOMMAGE !" : ""}}</p>
-				{{question.answer}}
-			</ion-item>
-			<button ng-click="step=52" class="button button-block button-positive">Suivant</button>
-		</div>
-
-		<!-- recaps de deux joeurs -->
-		<div class="recaps-container" ng-show="step == 52">
-		<h1>Comparez vos réponses</h1>
-			<div class="joueur1">
-				<ion-item ng-repeat="question in quiz.ruby">
-					<h2>Question N°{{question.questionNumber}}</h2>
-					<p ng-show="answer[$index] == 'good'" class="bravo">{{(answer[$index]) == "good" ? "BRAVO !" : ""}}</p>
-					<p ng-show="answer[$index] != 'good'"class="dommage">{{(answer[$index]) != "good" ? "DOMMAGE !" : ""}}</p>
-					<hr>
-				</ion-item>
-			</div>
-			<div class="joueur2">
-				<ion-item>
-					<h2>Question N°1</h2>
-					<p class="bravo">BRAVO !</p>
-					<hr>
-				</ion-item>
-				<ion-item>
-					<h2>Question N°2</h2>
-					<p class="dommage">Dommage !</p>
-					<hr>
-				</ion-item>
-				<ion-item>
-					<h2>Question N°3</h2>
-					<p class="dommage">Dommage !</p>
-					<hr>
-				</ion-item>
-				<ion-item>
-					<h2>Question N°4</h2>
-					<p class="dommage">Dommage !</p>
-					<hr>
-				</ion-item>
-				<ion-item>
-					<h2>Question N°5</h2>
-					<p class="dommage">Dommage !</p>
-					<hr>
-				</ion-item>
-				<ion-item>
-					<h2>Question N°6</h2>
-					<p class="dommage">Dommage !</p>
-					<hr>
-				</ion-item>
-				<ion-item>
-					<h2>Question N°7</h2>
-					<p class="dommage">Dommage !</p>
-					<hr>
-				</ion-item>
-			</div>
-			<button ng-click="step=53; calculDistance()" class="button button-block button-positive">Suivant</button>
-		</div>
 
 		
 		<div class="winner" ng-show="step == 53">
