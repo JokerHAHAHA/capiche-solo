@@ -12,8 +12,15 @@ function hangCtrl($scope, $http) {
 
 	$scope.add = function(){
 		var data = $scope.hang.word.toUpperCase();
+		if (/^[a-zA-Z]{3,12}$/.test(data)){
+			$http.post('http://localhost:8000/hangs', data);
+		}
+		else {
+			$scope.hang.wordPb = 1;
+			$scope.hang.word = '';
+			return;
+		}
 		console.log("data : " + data)
-		$http.post('http://localhost:8000/hangs', data);
 	}
 	$scope.whiteSpace = function() {
 console.log("scope.hang : " + $scope.hang);
